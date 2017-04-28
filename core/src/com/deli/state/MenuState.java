@@ -1,5 +1,7 @@
 package com.deli.state;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.deli.FlappyBirdGame;
@@ -19,12 +21,15 @@ public class MenuState extends State {
 
     @Override
     public void handleInput() {
-
+        if(Gdx.input.isKeyJustPressed(Input.Keys.ANY_KEY)) {
+            gameStateManager.set(new PlayState(gameStateManager));
+            dispose();
+        }
     }
 
     @Override
     public void update(float dt) {
-
+        handleInput();
     }
 
     @Override

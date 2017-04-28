@@ -5,9 +5,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector3;
 
 public abstract class State {
-    private OrthographicCamera camera;
-    private Vector3 mouse;
-    private GameStateManager gameStateManager;
+    protected OrthographicCamera camera;
+    protected Vector3 mouse;
+    protected GameStateManager gameStateManager;
 
     public State(GameStateManager gameStateManager) {
         this.gameStateManager = gameStateManager;
